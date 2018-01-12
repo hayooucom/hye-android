@@ -11,12 +11,12 @@ import java.security.Security;
 import java.security.spec.ECGenParameterSpec;
 import java.util.Arrays;
 
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
+import org.spongycastle.jce.provider.BouncyCastleProvider;
 
 import org.web3j.utils.Numeric;
 import org.web3j.utils.Strings;
 
-
+import org.spongycastle.jcajce.provider.asymmetric.ec.KeyPairGeneratorSpi;
 /**
  * Crypto key utilities.
  */
@@ -44,7 +44,7 @@ public class Keys {
     static KeyPair createSecp256k1KeyPair() throws NoSuchProviderException,
             NoSuchAlgorithmException, InvalidAlgorithmParameterException {
 
-        KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("ECDSA", "BC");
+        KeyPairGenerator keyPairGenerator =  new KeyPairGeneratorSpi.ECDSA();//KeyPairGenerator.getInstance("ECDSA", "BC");
         ECGenParameterSpec ecGenParameterSpec = new ECGenParameterSpec("secp256k1");
         keyPairGenerator.initialize(ecGenParameterSpec, new SecureRandom());
         return keyPairGenerator.generateKeyPair();

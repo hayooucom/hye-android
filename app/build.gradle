@@ -93,16 +93,16 @@ dependencies {
     compile 'com.android.support:design:25.3.1'
     compile 'com.squareup.okhttp3:okhttp:3.8.0'
     compile 'com.android.support:support-v4:25.3.1'
-    testCompile 'junit:junit:4.12'
+    //testCompile 'junit:junit:4.12'
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.android.support:recyclerview-v7:25.3.1'
     //compile 'org.web3j:core-android:2.2.1'
-    compile "com.madgag.spongycastle:prov:1.54.0.0"
+    //compile "com.madgag.spongycastle:prov:1.54.0.0"
     compile 'org.apache.httpcomponents:httpcomponents-client:4.5.2'
     compile "org.slf4j:slf4j-api:1.7.25"
     compile "com.squareup.okhttp3:logging-interceptor:3.8.1"
     compile 'com.fasterxml.jackson.core:jackson-databind:2.8.5',
-            'org.bouncycastle:bcprov-jdk15on:1.54',
+            //'org.bouncycastle:bcprov-jdk15on:1.54',
             'com.lambdaworks:scrypt:1.4.0',
             'com.squareup:javapoet:1.7.0',
             'io.reactivex:rxjava:1.2.4',
