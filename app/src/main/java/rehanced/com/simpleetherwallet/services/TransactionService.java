@@ -4,8 +4,11 @@ import android.app.IntentService;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,6 +16,7 @@ import org.spongycastle.util.encoders.Hex;
 import org.web3j.crypto.Credentials;
 import org.web3j.crypto.TransactionEncoder;
 import org.web3j.protocol.core.methods.request.RawTransaction;
+//import org.web3j.crypto.RawTransaction;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -23,6 +27,7 @@ import okhttp3.Callback;
 import okhttp3.Response;
 import rehanced.com.simpleetherwallet.R;
 import rehanced.com.simpleetherwallet.activities.MainActivity;
+import rehanced.com.simpleetherwallet.activities.SendActivity;
 import rehanced.com.simpleetherwallet.network.EtherscanAPI;
 import rehanced.com.simpleetherwallet.utils.ExchangeCalculator;
 import rehanced.com.simpleetherwallet.utils.WalletStorage;
@@ -31,6 +36,7 @@ public class TransactionService extends IntentService {
 
     private NotificationCompat.Builder builder;
     final int mNotificationId = 153;
+    protected  MainActivity ac;
 
     public TransactionService() {
         super("Transaction Service");
@@ -80,7 +86,7 @@ public class TransactionService extends IntentService {
                                         "Data: " + tx.getData()
                         );
 
-                        byte[] signed = TransactionEncoder.signMessage(tx, (byte) 1, keys);
+                        byte[] signed = TransactionEncoder.signMessage(tx, 5767778797L, keys);
 
                         forwardTX(signed);
                     } catch (Exception e) {
@@ -91,7 +97,16 @@ public class TransactionService extends IntentService {
             });
 
         } catch (Exception e) {
-            error("Invalid Wallet Password!");
+            error("钱包密码错误！ 请重试");
+            //CoordinatorLayout coord = (CoordinatorLayout) view.findViewById(R.id.main_content);
+
+            //Snackbar mySnackbar = Snackbar.make(coord,
+             //      "钱包密码错误！"  , Snackbar.LENGTH_SHORT);
+            //mySnackbar.show();
+
+            try {
+                Toast.makeText(ac, "密码错误！ 请重试", Toast.LENGTH_LONG).show();
+            }catch (Exception ex){}
             e.printStackTrace();
         }
     }

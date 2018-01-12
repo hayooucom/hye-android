@@ -136,7 +136,7 @@ public class WalletStorage {
             ExternalStorageHandler.askForPermissionRead(c);
             return;
         }
-        File[] wallets = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/Lunary/").listFiles();
+        File[] wallets = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/HayoouETH/").listFiles();
         if (wallets == null) {
             Dialogs.noImportWalletsFound(c);
             return;
@@ -151,7 +151,7 @@ public class WalletStorage {
                     if (position < 0) continue;
                     String addr = wallets[i].getName().substring(0, position);
                     if (addr.length() == 40 && !mapdb.contains("0x" + wallets[i].getName())) {
-                        foundImports.add(wallets[i]); // Exported with Lunary
+                        foundImports.add(wallets[i]); // Exported with HayoouETH
                     }
                 }
             }
@@ -180,7 +180,7 @@ public class WalletStorage {
                 if(! BuildConfig.DEBUG)
                     toImport.get(i).delete();
                 WalletStorage.getInstance(c).add(new FullWallet("0x" + address, address), c);
-                AddressNameConverter.getInstance(c).put("0x" + address, "Wallet " + ("0x" + address).substring(0, 6), c);
+                AddressNameConverter.getInstance(c).put("0x" + address, "钱包 " + ("0x" + address).substring(0, 6), c);
 
                 Intent mediaScannerIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
                 Uri fileContentUri = Uri.fromFile(toImport.get(i)); // With 'permFile' being the File object
@@ -205,7 +205,7 @@ public class WalletStorage {
             walletToExport = walletToExport.substring(2);
 
         if (ExternalStorageHandler.hasPermission(c)) {
-            File folder = new File(Environment.getExternalStorageDirectory(), "Lunary");
+            File folder = new File(Environment.getExternalStorageDirectory(), "HayoouETH");
             if (!folder.exists()) folder.mkdirs();
 
             File storeFile = new File(folder, walletToExport + ".json");

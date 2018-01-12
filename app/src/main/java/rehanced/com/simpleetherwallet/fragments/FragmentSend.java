@@ -52,7 +52,7 @@ import static rehanced.com.simpleetherwallet.R.id.seekBar;
 
 public class FragmentSend extends Fragment {
 
-    private final int DEFAULT_GAS_PRICE = 12;
+    private final int DEFAULT_GAS_PRICE = 60;
 
     private SendActivity ac;
     private Button send;
@@ -191,7 +191,7 @@ public class FragmentSend extends Fragment {
 
         currencySpinner = (Spinner) rootView.findViewById(R.id.currency_spinner);
         List<String> currencyList = new ArrayList<>();
-        currencyList.add("ETH");
+        currencyList.add("HYE");
         currencyList.add(ExchangeCalculator.getInstance().getMainCurreny().getName());
         ArrayAdapter<String> curAdapter = new ArrayAdapter<>(ac, android.R.layout.simple_spinner_item, currencyList);
         curAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

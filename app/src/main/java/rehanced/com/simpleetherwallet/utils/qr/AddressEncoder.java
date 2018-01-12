@@ -26,7 +26,7 @@ public class AddressEncoder {
         else if (s.startsWith("iban:XE") || s.startsWith("IBAN:XE"))
             return decodeICAP(s);
         else
-            return decodeLegacyLunary(s);
+            return decodeLegacyHayoouETH(s);
     }
 
     public static AddressEncoder decodeERC(String s) throws IOException {
@@ -74,7 +74,7 @@ public class AddressEncoder {
         return re;
     }
 
-    public static AddressEncoder decodeLegacyLunary(String s) throws IOException {
+    public static AddressEncoder decodeLegacyHayoouETH(String s) throws IOException {
         if (!s.startsWith("iban:") && !s.startsWith("IBAN:")) return new AddressEncoder(s);
         String temp = s.substring(5);
         String amount = null;

@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:text="Lunary Wallet"
+            android:text="哈友钱包"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"

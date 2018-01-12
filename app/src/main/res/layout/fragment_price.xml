@@ -86,7 +86,7 @@
                         android:minWidth="150dp"
                         android:layout_weight="1"
                         android:textSize="17sp"
-                        android:text="Last 7 Days"
+                        android:text="过去7天"
                         android:textColor="#FFFFFF" />
 
 

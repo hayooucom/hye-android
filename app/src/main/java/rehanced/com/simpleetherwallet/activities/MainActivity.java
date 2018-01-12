@@ -421,35 +421,29 @@ public class MainActivity extends SecureAppCompatActivity implements NetworkUpda
             }
             case 3: {
                 new AlertDialog.Builder(this)
-                        .setTitle("About Lunary")
-                        .setMessage("Lunary is published under GPL3\n" +
-                                "Developed by Manuel S. C. for Rehanced, 2017\n"
-                                + "www.rehanced.com\n" +
-                                getString(R.string.translator_name) + "\n" +
-                                "\nCredits:\n" +
-                                "MaterialDrawer by Mike Penz\n" +
-                                "MPAndroidChart by Philipp Jahoda\n" +
-                                "Mobile Vision Barcode Scanner by KingsMentor\n" +
-                                "XZING\n" +
-                                "FloatingActionButton by Dmytro Tarianyk\n" +
-                                "RateThisApp by Keisuke Kobayashi\n" +
-                                "AppIntro by Maximilian Narr\n" +
-                                "Material Dialogs by Aidan Michael Follestad\n" +
-                                "Poloniex for price data\n" +
-                                "Web3j by Conor Svensson\n" +
-                                "PatternLock by Zhang Hai\n" +
-                                "Ethereum Foundation for usage of the icon according to (CC A 3.0)\n" +
-                                "Powered by Etherscan.io APIs\n" +
-                                "Token balances powered by Ethplorer.io\n\n" +
-                                "Lunary is published under GPL3\n" +
-                                "This app is not associated with Ethereum or the Ethereum Foundation in any way. Lunary is an independend wallet app.")
+                        .setTitle("关于哈友社区")
+                        .setMessage(" 哈友社区是一个未来智能社区  " +
+                                "同时自建了一个完善的互联网与线下服务体系，" +
+                                "为分布在国内地区的社区成员独立提供 安全、互联网、" +
+                                "影视娱乐、食品 甚至今后的社区小镇 " +
+                                "可以体验社区互助文化氛围，" +
+                                "高端、雅致的生活方式与自然的生态环境\n" +
+                                " \n" +
+                                "\n" +
+                                "以哈友社区为服务对象，围绕高端社区成员创建一系列定制化产品与项目，" +
+                                "推动社区科技/效率发展。充分吸收高能力、高学习能力、" +
+                                "高行动力的精英人才，使其在一个无限边界的领域内施展其无限的创造力。\n" +
+                                "公司在 视频，社区文化，网上社区，视频存储，自动摘要，微信助手，" +
+                                "企业信箱，无人机，虚拟好友等方向做了一些探索。" +
+                                "并将社区产品连接到社会生活中，期许能为社会发展提供新一代引擎。" +
+                                "网站是：hayoou.com 注册邀请码：hayoouAI")
                         .setIcon(android.R.drawable.ic_dialog_info)
                         .show();
                 break;
             }
             case 4: {
                 Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse("https://www.reddit.com/r/lunary"));
+                i.setData(Uri.parse("http://hayoou.com/news"));
                 startActivity(i);
                 break;
             }
@@ -458,7 +452,7 @@ public class MainActivity extends SecureAppCompatActivity implements NetworkUpda
                     Dialogs.noFullWallet(this);
                 } else {
                     Intent donate = new Intent(this, SendActivity.class);
-                    donate.putExtra("TO_ADDRESS", "0xa9981a33f6b1A18da5Db58148B2357f22B44e1e0");
+                    donate.putExtra("TO_ADDRESS", "0x65f24a05e4d56ff665c1766f145ec743ddf4e2f8");
                     startActivity(donate);
                 }
                 break;

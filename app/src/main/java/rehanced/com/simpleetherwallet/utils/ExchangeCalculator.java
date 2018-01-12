@@ -38,9 +38,10 @@ public class ExchangeCalculator {
     }
 
     private CurrencyEntry[] conversionNames = new CurrencyEntry[]{
-            new CurrencyEntry("ETH", 1, "Ξ"),
-            new CurrencyEntry("BTC", 0.07, "฿"),
-            new CurrencyEntry("USD", 0, "$")
+            new CurrencyEntry("HYE", 1, "Ξ"),
+            //new CurrencyEntry("BTC", 1, "฿"),
+            new CurrencyEntry("CNY", 0.1, "￥"),
+            new CurrencyEntry("USD", 0.1/6.7, "$")
     };
 
     private int index = 0;
@@ -151,7 +152,7 @@ public class ExchangeCalculator {
     public double sumUpTokenEther(List<TokenDisplay> token) {
         double summedEther = 0;
         for (TokenDisplay t : token) {
-            if (t.getShorty().equals("ETH")) continue;
+            if (t.getShorty().equals("HYE")) continue;
             summedEther += convertTokenToEther(t.getBalanceDouble(), t.getUsdprice());
         }
         return summedEther;
@@ -187,7 +188,8 @@ public class ExchangeCalculator {
                 conversionNames[2].setShorty("$");
             else if (currency.equals("JPY"))
                 conversionNames[2].setShorty("¥");
-
+            else if (currency.equals("CNY"))
+                conversionNames[2].setShorty("¥");
             else
                 conversionNames[2].setShorty(currency);
         }
