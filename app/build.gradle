@@ -82,9 +82,11 @@ android {
 }
 
 dependencies {
+    /*
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    */
     compile 'com.github.clans:fab:1.6.4'
     compile 'me.dm7.barcodescanner:zxing:1.8.4'
     compile 'com.android.support:appcompat-v7:25.3.1'
