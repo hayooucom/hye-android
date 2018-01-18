@@ -52,7 +52,8 @@ public class FragmentTransactionsAll extends FragmentTransactionsAbstract {
 
     public void update(boolean force) {
         if (ac == null) return;
-        getWallets().clear();
+        if(false)
+            getWallets().clear();
         if (swipeLayout != null)
             swipeLayout.setRefreshing(true);
         resetRequestCount();
@@ -167,8 +168,15 @@ public class FragmentTransactionsAll extends FragmentTransactionsAbstract {
 
 
     public void addConfirmedTransaction(String from, String to, BigInteger amount) {
-        confirmed = new TransactionDisplay(from, to, amount, 12, System.currentTimeMillis(), "", TransactionDisplay.NORMAL, "", "0", 0, 0, 0, false);
-        wallets.add(0, confirmed);
+        ArrayList<TransactionDisplay> erg = new ArrayList<TransactionDisplay>();
+
+        confirmed = new TransactionDisplay(from, to, amount, 14, System.currentTimeMillis(), "", TransactionDisplay.NORMAL, "", "0", 0, 0, 0, false);
+        erg.add(confirmed);
+        addToWallets(erg);
+        addRequestCount();
+        nothingToShow.setVisibility(wallets.size() == 0 ? View.VISIBLE : GONE);
+
+        //wallets.add(0, confirmed);
         notifyDataSetChanged();
     }
 
@@ -177,6 +185,7 @@ public class FragmentTransactionsAll extends FragmentTransactionsAbstract {
         unconfirmed = new TransactionDisplay(from, to, amount, 0, System.currentTimeMillis(), "", TransactionDisplay.NORMAL, "", "0", 0, 1, 1, false);
         unconfirmed_addedTime = System.currentTimeMillis();
         wallets.add(0, unconfirmed);
+        nothingToShow.setVisibility(wallets.size() == 0 ? View.VISIBLE : GONE);
         notifyDataSetChanged();
     }
 

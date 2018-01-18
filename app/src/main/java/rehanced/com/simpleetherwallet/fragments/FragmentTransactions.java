@@ -33,8 +33,10 @@ public class FragmentTransactions extends FragmentTransactionsAbstract {
 
     public void update(boolean force) {
         if (ac == null) return;
-        resetRequestCount();
-        getWallets().clear();
+        if(true) {
+            resetRequestCount();
+            getWallets().clear();
+        }
         if (swipeLayout != null)
             swipeLayout.setRefreshing(true);
 

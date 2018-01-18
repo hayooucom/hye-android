@@ -165,6 +165,7 @@ public class MainActivity extends SecureAppCompatActivity implements NetworkUpda
             if (tabLayout != null)
                 tabLayout.getTabAt(getIntent().getIntExtra("STARTAT", 2)).select();
             broadCastDataSetChanged();
+
         } else if (Settings.startWithWalletTab) { // if enabled in setting select wallet tab instead of price tab
             if (tabLayout != null)
                 tabLayout.getTabAt(1).select();
@@ -351,7 +352,7 @@ public class MainActivity extends SecureAppCompatActivity implements NetworkUpda
                     return;
                 }
                 ((FragmentTransactionsAll) fragments[2]).addConfirmedTransaction(data.getStringExtra("FROM_ADDRESS"), data.getStringExtra("TO_ADDRESS"), new BigDecimal("-" + data.getStringExtra("AMOUNT")).multiply(new BigDecimal("1000000000000000000")).toBigInteger());
-                ((FragmentTransactionsAll) fragments[2]).addUnconfirmedTransaction(data.getStringExtra("FROM_ADDRESS"), data.getStringExtra("TO_ADDRESS"), new BigDecimal("-" + data.getStringExtra("AMOUNT")).multiply(new BigDecimal("1000000000000000000")).toBigInteger());
+                //((FragmentTransactionsAll) fragments[2]).addUnconfirmedTransaction(data.getStringExtra("FROM_ADDRESS"), data.getStringExtra("TO_ADDRESS"), new BigDecimal("-" + data.getStringExtra("AMOUNT")).multiply(new BigDecimal("1000000000000000000")).toBigInteger());
 
                 if (tabLayout != null)
                     tabLayout.getTabAt(2).select();
