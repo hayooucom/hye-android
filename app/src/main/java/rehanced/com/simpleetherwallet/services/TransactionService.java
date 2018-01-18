@@ -28,6 +28,7 @@ import okhttp3.Response;
 import rehanced.com.simpleetherwallet.R;
 import rehanced.com.simpleetherwallet.activities.MainActivity;
 import rehanced.com.simpleetherwallet.activities.SendActivity;
+import rehanced.com.simpleetherwallet.fragments.FragmentTransactionsAll;
 import rehanced.com.simpleetherwallet.network.EtherscanAPI;
 import rehanced.com.simpleetherwallet.utils.ExchangeCalculator;
 import rehanced.com.simpleetherwallet.utils.WalletStorage;
@@ -37,6 +38,7 @@ public class TransactionService extends IntentService {
     private NotificationCompat.Builder builder;
     final int mNotificationId = 153;
     protected  MainActivity ac;
+    protected String ToAddress;
 
     public TransactionService() {
         super("Transaction Service");
@@ -48,6 +50,7 @@ public class TransactionService extends IntentService {
         try {
             String fromAddress = intent.getStringExtra("FROM_ADDRESS");
             final String toAddress = intent.getStringExtra("TO_ADDRESS");
+            ToAddress = toAddress;
             final String amount = intent.getStringExtra("AMOUNT");
             final String gas_price = intent.getStringExtra("GAS_PRICE");
             final String gas_limit = intent.getStringExtra("GAS_LIMIT");
@@ -140,11 +143,12 @@ public class TransactionService extends IntentService {
 
     private void suc(String hash) {
         builder
-                .setContentTitle(getString(R.string.notification_transfersuc))
+                .setContentTitle(getString(R.string.notification_transfersuc)+" 发送给："+ToAddress)
                 .setProgress(100, 100, false)
                 .setOngoing(false)
                 .setAutoCancel(true)
                 .setContentText("");
+
 
         Intent main = new Intent(this, MainActivity.class);
         main.putExtra("STARTAT", 2);

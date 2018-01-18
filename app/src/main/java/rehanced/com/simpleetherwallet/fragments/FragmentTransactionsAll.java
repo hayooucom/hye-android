@@ -28,6 +28,7 @@ import static android.view.View.GONE;
 public class FragmentTransactionsAll extends FragmentTransactionsAbstract {
 
     protected TransactionDisplay unconfirmed;
+    protected TransactionDisplay confirmed;
     private long unconfirmed_addedTime;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -162,6 +163,13 @@ public class FragmentTransactionsAll extends FragmentTransactionsAbstract {
             nothingToShow.setVisibility(wallets.size() == 0 ? View.VISIBLE : GONE);
             walletAdapter.notifyDataSetChanged();
         }
+    }
+
+
+    public void addConfirmedTransaction(String from, String to, BigInteger amount) {
+        confirmed = new TransactionDisplay(from, to, amount, 12, System.currentTimeMillis(), "", TransactionDisplay.NORMAL, "", "0", 0, 0, 0, false);
+        wallets.add(0, confirmed);
+        notifyDataSetChanged();
     }
 
 

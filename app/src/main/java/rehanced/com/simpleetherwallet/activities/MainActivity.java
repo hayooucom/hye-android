@@ -345,8 +345,14 @@ public class MainActivity extends SecureAppCompatActivity implements NetworkUpda
             }
         } else if (requestCode == rehanced.com.simpleetherwallet.activities.SendActivity.REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
-                if (fragments == null || fragments[2] == null) return;
+                if( fragments == null )
+                    return;
+                if(fragments[2] == null) {
+                    return;
+                }
+                ((FragmentTransactionsAll) fragments[2]).addConfirmedTransaction(data.getStringExtra("FROM_ADDRESS"), data.getStringExtra("TO_ADDRESS"), new BigDecimal("-" + data.getStringExtra("AMOUNT")).multiply(new BigDecimal("1000000000000000000")).toBigInteger());
                 ((FragmentTransactionsAll) fragments[2]).addUnconfirmedTransaction(data.getStringExtra("FROM_ADDRESS"), data.getStringExtra("TO_ADDRESS"), new BigDecimal("-" + data.getStringExtra("AMOUNT")).multiply(new BigDecimal("1000000000000000000")).toBigInteger());
+
                 if (tabLayout != null)
                     tabLayout.getTabAt(2).select();
             }
@@ -433,7 +439,7 @@ public class MainActivity extends SecureAppCompatActivity implements NetworkUpda
                                 "以哈友社区为服务对象，围绕高端社区成员创建一系列定制化产品与项目，" +
                                 "推动社区科技/效率发展。充分吸收高能力、高学习能力、" +
                                 "高行动力的精英人才，使其在一个无限边界的领域内施展其无限的创造力。\n" +
-                                "公司在 视频，社区文化，网上社区，视频存储，自动摘要，微信助手，" +
+                                "社区在 线上视频，社区文化，网上社区，视频存储，自动摘要，微信助手，" +
                                 "企业信箱，无人机，虚拟好友等方向做了一些探索。" +
                                 "并将社区产品连接到社会生活中，期许能为社会发展提供新一代引擎。" +
                                 "网站是：hayoou.com 注册邀请码：hayoouAI")
