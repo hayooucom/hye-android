@@ -113,7 +113,7 @@
         <string name ="request_activity_ether">请求金额</string>
         <string name ="request_activity_to">您的钱包/地址</string>
 
-        <string name ="no_tx_history">这是转账列表，仅显示你发送的情况，重启APP后消失。\n如果右下角未出现发送符号，请在上方三横处往下拉，同样在主界面为出现 + 号，也是一样。\n在主界面下拉可刷新资金情况。\n\n TG 群：hayoou.com/hyetg \n QQ群：674759816 \n 客户端更新：hayoou.com/hye </string>
+        <string name ="no_tx_history">这是转账列表，仅显示你发送的情况，重启APP后消失。\n如果右下角未出现发送符号，请在上方三横处往下拉，同样在主界面为出现 + 号，也是一样。\n在主界面下拉可刷新资金情况。\n\n TG 群：hayoou.com/gtctg \n QQ群：674759816 \n 客户端更新：hayoou.com/gtcapp </string>
         <string name ="no_wallet_history">您目前没有任何钱包。您可以使用下面的按钮轻松创建或导入一个。</string>
 
 
