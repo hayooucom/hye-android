@@ -92,7 +92,7 @@ public class Dialogs {
                 }
             }
         });
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("OK 确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 InputMethodManager inputMgr = (InputMethodManager) input.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -101,7 +101,7 @@ public class Dialogs {
                 dialog.dismiss();
             }
         });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 InputMethodManager inputMgr = (InputMethodManager) input.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -305,7 +305,7 @@ public class Dialogs {
                                     }
                                     c.snackError(c.getResources().getString(suc ? R.string.main_ac_wallet_added_suc : R.string.main_ac_wallet_added_er));
                                     if (suc)
-                                        AddressNameConverter.getInstance(c).put(input.getText().toString(), "Watch " + input.getText().toString().substring(0, 6), c);
+                                        AddressNameConverter.getInstance(c).put(input.getText().toString(), "Watch 查看地址 " + input.getText().toString().substring(0, 6), c);
                                 }
                             }, 100);
                 } else {

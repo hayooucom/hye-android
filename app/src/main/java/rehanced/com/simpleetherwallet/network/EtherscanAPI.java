@@ -39,7 +39,7 @@ public class EtherscanAPI {
     }
 
     public void getPriceChart(long starttime, int period, boolean usd, Callback b) throws IOException {
-        get("http://heapi.hayoou.com/getex.php?command=returnChartData&currencyPair=" + (usd ? "USDT_HYE" : "BTC_HYE") + "&start=" + starttime + "&end=9999999999&period=" + period, b);
+        get("http://gtb.hayoou.com/getex.php?command=returnChartData&currencyPair=" + (usd ? "USDT_GTC" : "BTC_GTC") + "&start=" + starttime + "&end=9999999999&period=" + period, b);
     }
 
     /**
@@ -53,11 +53,11 @@ public class EtherscanAPI {
     public void getInternalTransactions(String address, Callback b, boolean force) throws IOException {
         if (!force && RequestCache.getInstance().contains(RequestCache.TYPE_TXS_INTERNAL, address)) {
             b.onResponse(null, new Response.Builder().code(200).message("").request(new Request.Builder()
-                    .url("http://heapi.hayoou.com/api.php?module=account&action=txlistinternal&address=" + address + "&startblock=0&endblock=99999999&sort=asc&apikey=" + token)
+                    .url("http://gtb.hayoou.com/api.php?module=account&action=txlistinternal&address=" + address + "&startblock=0&endblock=99999999&sort=asc&apikey=" + token)
                     .build()).protocol(Protocol.HTTP_1_0).body(ResponseBody.create(MediaType.parse("JSON"), RequestCache.getInstance().get(RequestCache.TYPE_TXS_INTERNAL, address))).build());
             return;
         }
-        get("http://heapi.hayoou.com/api.php?module=account&action=txlistinternal&address=" + address + "&startblock=0&endblock=99999999&sort=asc&apikey=" + token, b);
+        get("http://gtb.hayoou.com/api.php?module=account&action=txlistinternal&address=" + address + "&startblock=0&endblock=99999999&sort=asc&apikey=" + token, b);
     }
 
 
@@ -72,21 +72,21 @@ public class EtherscanAPI {
     public void getNormalTransactions(String address, Callback b, boolean force) throws IOException {
         if (!force && RequestCache.getInstance().contains(RequestCache.TYPE_TXS_NORMAL, address)) {
             b.onResponse(null, new Response.Builder().code(200).message("").request(new Request.Builder()
-                    .url("http://heapi.hayoou.com/api.php?module=account&action=txlist&address=" + address + "&startblock=0&endblock=99999999&sort=asc&apikey=" + token)
+                    .url("http://gtb.hayoou.com/api.php?module=account&action=txlist&address=" + address + "&startblock=0&endblock=99999999&sort=asc&apikey=" + token)
                     .build()).protocol(Protocol.HTTP_1_0).body(ResponseBody.create(MediaType.parse("JSON"), RequestCache.getInstance().get(RequestCache.TYPE_TXS_NORMAL, address))).build());
             return;
         }
-        get("http://heapi.hayoou.com/api.php?module=account&action=txlist&address=" + address + "&startblock=0&endblock=99999999&sort=asc&apikey=" + token, b);
+        get("http://gtb.hayoou.com/api.php?module=account&action=txlist&address=" + address + "&startblock=0&endblock=99999999&sort=asc&apikey=" + token, b);
     }
 
 
     public void getEtherPrice(Callback b) throws IOException {
-        get("http://heapi.hayoou.com/api.php?module=stats&action=ethprice&apikey=" + token, b);
+        get("http://gtb.hayoou.com/api.php?module=stats&action=ethprice&apikey=" + token, b);
     }
 
 
     public void getGasPrice(Callback b) throws IOException {
-        get("http://heapi.hayoou.com/api.php?module=proxy&action=eth_gasPrice&apikey=" + token, b);
+        get("http://gtb.hayoou.com/api.php?module=proxy&action=eth_gasPrice&apikey=" + token, b);
     }
 
 
@@ -150,17 +150,17 @@ public class EtherscanAPI {
 
 
     public void getGasLimitEstimate(String to, Callback b) throws IOException {
-        get("http://heapi.hayoou.com/api.php?module=proxy&action=eth_estimateGas&to=" + to + "&value=0xff22&gasPrice=0x051da038cc&gas=0xffffff&apikey=" + token, b);
+        get("http://gtb.hayoou.com/api.php?module=proxy&action=eth_estimateGas&to=" + to + "&value=0xff22&gasPrice=0x051da038cc&gas=0xffffff&apikey=" + token, b);
     }
 
 
     public void getBalance(String address, Callback b) throws IOException {
-        get("http://heapi.hayoou.com/api.php?module=account&action=balance&address=" + address + "&apikey=" + token, b);
+        get("http://gtb.hayoou.com/api.php?module=account&action=balance&address=" + address + "&apikey=" + token, b);
     }
 
 
     public void getNonceForAddress(String address, Callback b) throws IOException {
-        get("http://heapi.hayoou.com/api.php?module=proxy&action=eth_getTransactionCount&address=" + address + "&tag=latest&apikey=" + token, b);
+        get("http://gtb.hayoou.com/api.php?module=proxy&action=eth_getTransactionCount&address=" + address + "&tag=latest&apikey=" + token, b);
     }
 
 
@@ -170,7 +170,7 @@ public class EtherscanAPI {
 
 
     public void getBalances(ArrayList<StorableWallet> addresses, Callback b) throws IOException {
-        String url = "http://heapi.hayoou.com/api.php?module=account&action=balancemulti&address=";
+        String url = "http://gtb.hayoou.com/api.php?module=account&action=balancemulti&address=";
         for (StorableWallet address : addresses)
             url += address.getPubKey() + ",";
         url = url.substring(0, url.length() - 1) + "&tag=latest&apikey=" + token; // remove last , AND add token
@@ -179,7 +179,7 @@ public class EtherscanAPI {
 
 
     public void forwardTransaction(String raw, Callback b) throws IOException {
-        get("http://heapi.hayoou.com/api.php?module=proxy&action=eth_sendRawTransaction&hex=" + raw + "&apikey=" + token, b);
+        get("http://gtb.hayoou.com/api.php?module=proxy&action=eth_sendRawTransaction&hex=" + raw + "&apikey=" + token, b);
     }
 
 

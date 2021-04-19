@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.design.widget.AppBarLayout;
@@ -27,6 +28,7 @@ import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
+import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.security.Security;
@@ -63,6 +65,9 @@ public class MainActivity extends SecureAppCompatActivity implements NetworkUpda
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        File folder = new File(Environment.getExternalStorageDirectory(), "GithubCoin");
+        if (!folder.exists()) folder.mkdirs();
 
         // App Intro
         preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
@@ -427,9 +432,19 @@ public class MainActivity extends SecureAppCompatActivity implements NetworkUpda
                 break;
             }
             case 3: {
+
+                Intent intent = new Intent();
+                //或者是像下面这样的写,这里是用来了意图（intent）里面的标准action这里面还有许多的标准意图可以使用
+//   intent.setAction("android.intent.action.VIEW"); //这里面的意图可以自已写也可以像下面一句这样直接用Intent里面的常量
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("http://v.hayoou.com/ethwallet/gtbshare/intro.php"));//设置一个URI地址
+                this.startActivity(intent);//用startActivity打开这个指定的网页。
+                /*
                 new AlertDialog.Builder(this)
-                        .setTitle("关于哈友社区")
-                        .setMessage(" 哈友社区是一个未来智能社区  " +
+                        .setTitle("贵州Githubcoin科技有限公司介绍")
+                        .setMessage("关于我们：\n" +
+                               "    Githubcoin实际上就是一个市场与原生态食品原生态旅游对接的O2O共享平台，利用有限的资源通过共享和抱团去无限的展示、放大农场和农场的产品，由单一走向全面。Githubcoin将成为资金、人才、技术、市场、经验等互助的互联网+O2O共享平台。在这里真正要实现的是吸引用户，树立品牌，建立自己的个人信誉为保证的社会群体。社员与社员之间互帮互学、优势互补、资源共享，通过抱团发展，优势互补，解决社员与商家的难点，为社员提供金融支持、技术指导、宣传推广，在Githubcoin大品牌下共同发展共同受益。社员与消费者之间，诚信相处，互利共赢。引领社会诚信，民族身心健康，国家昌盛。\n" +
+                                "哈友社区是一个未来智能社区  " +
                                 "同时自建了一个完善的互联网与线下服务体系，" +
                                 "为分布在国内地区的社区成员独立提供 安全、互联网、" +
                                 "影视娱乐、食品 甚至今后的社区小镇 " +
@@ -437,20 +452,21 @@ public class MainActivity extends SecureAppCompatActivity implements NetworkUpda
                                 "高端、雅致的生活方式与自然的生态环境\n" +
                                 " \n" +
                                 "\n" +
-                                "以哈友社区为服务对象，围绕高端社区成员创建一系列定制化产品与项目，" +
+                                "以哈友社区和Githubcoin用户为服务对象，围绕高端社区成员创建一系列定制化产品与项目，" +
                                 "推动社区科技/效率发展。充分吸收高能力、高学习能力、" +
                                 "高行动力的精英人才，使其在一个无限边界的领域内施展其无限的创造力。\n" +
-                                "社区在 线上视频，社区文化，网上社区，视频存储，自动摘要，微信助手，" +
+                                "社区在 在线视频（魔映短视频），文化，网上社区，视频存储，自动摘要，微信助手，" +
                                 "企业信箱，无人机，虚拟好友等方向做了一些探索。" +
-                                "并将社区产品连接到社会生活中，期许能为社会发展提供新一代引擎。" +
-                                "网站是：hayoou.com 注册邀请码：hayoouAI")
+                                "并将社区产品连接到社会生活中，期许能为社会发展提供新一代引擎。\n" +
+                                "网站是：hayoou.com 注册邀请码：hayoouAI\n" +
+                                "微信公众号：hayoou 微信客服：hayoou2")
                         .setIcon(android.R.drawable.ic_dialog_info)
-                        .show();
+                        .show();*/
                 break;
             }
             case 4: {
                 Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse("http://hayoou.com/news"));
+                i.setData(Uri.parse("http://hayoou.com/githubcoin"));
                 startActivity(i);
                 break;
             }
@@ -459,7 +475,7 @@ public class MainActivity extends SecureAppCompatActivity implements NetworkUpda
                     Dialogs.noFullWallet(this);
                 } else {
                     Intent donate = new Intent(this, SendActivity.class);
-                    donate.putExtra("TO_ADDRESS", "0x65f24a05e4d56ff665c1766f145ec743ddf4e2f8");
+                    donate.putExtra("TO_ADDRESS", "0xde7bb8d864380070f4814da0b9bd7ecdb5c2337f");
                     startActivity(donate);
                 }
                 break;

@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="translator_name"></string>
 
-    <string name="app_name">Hayoou ETH</string>
+    <string name="app_name">GithubCoin</string>
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_main">Hayoou ETH</string>

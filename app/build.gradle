@@ -6,7 +6,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
     defaultConfig {
-        applicationId "com.hayoou.ETHwallet"
+        applicationId "github.com.coin"
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 28
@@ -14,6 +14,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
+        flavorDimensions "versionCode"
     }
     buildTypes {
         release {
@@ -23,8 +24,8 @@ android {
     }
 
     compileOptions {
-        targetCompatibility 1.7
-        sourceCompatibility 1.7
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
     }
 
     packagingOptions {

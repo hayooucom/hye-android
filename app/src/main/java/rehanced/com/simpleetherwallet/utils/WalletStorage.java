@@ -136,7 +136,10 @@ public class WalletStorage {
             ExternalStorageHandler.askForPermissionRead(c);
             return;
         }
-        File[] wallets = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/HayoouETH/").listFiles();
+        File folder = new File(Environment.getExternalStorageDirectory(), "GithubCoin");
+        if (!folder.exists()) folder.mkdirs();
+
+        File[] wallets = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/GithubCoin/").listFiles();
         if (wallets == null) {
             Dialogs.noImportWalletsFound(c);
             return;
@@ -151,7 +154,7 @@ public class WalletStorage {
                     if (position < 0) continue;
                     String addr = wallets[i].getName().substring(0, position);
                     if (addr.length() == 40 && !mapdb.contains("0x" + wallets[i].getName())) {
-                        foundImports.add(wallets[i]); // Exported with HayoouETH
+                        foundImports.add(wallets[i]); // Exported with GithubCoin
                     }
                 }
             }
@@ -205,7 +208,7 @@ public class WalletStorage {
             walletToExport = walletToExport.substring(2);
 
         if (ExternalStorageHandler.hasPermission(c)) {
-            File folder = new File(Environment.getExternalStorageDirectory(), "HayoouETH");
+            File folder = new File(Environment.getExternalStorageDirectory(), "GithubCoin");
             if (!folder.exists()) folder.mkdirs();
 
             File storeFile = new File(folder, walletToExport + ".json");
