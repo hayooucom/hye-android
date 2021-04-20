@@ -231,7 +231,7 @@
         <string name ="send_expert_warning">您可以添加额外的数据与您的交易一起发送。如果你不知道这是什么，那么就不要碰它，否则会发生不好的事情！</string>
         <string name ="expert_mode_optional">专家模式（可选）</string>
         <string name ="transaction_failed">交易失败</string>
-        <string name ="reddit">Githubcoin</string>
+        <string name ="reddit">Github</string>
         <string name ="add">添加</string>
         <string name ="show">显示</string>
         <string name ="setting_erc_qr_encoding">使用ERC-67 QR编码</string>
@@ -267,7 +267,7 @@
 客服咨询微信：hayoou2
 <br/> <br/>
 ]]></string>
-
+    <string name="getgithubcoin">获取 GithubCoin</string>
 
 
 </resources>
