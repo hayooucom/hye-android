@@ -1,16 +1,16 @@
-## Hello World Github Coin  !
+## Hello World Gitlib Coin  !
 
 Thanks github users and many programer hard working and wonderful ideas.And share they code with everyone ,sometimes didn't expect to get much in return. After years of they contributions we have this such great world right now. Such as Linus Benedict , share his software Linux operasystem over the world.
 
 These spirte should last forever.we need let them get rewarded.And also exchange the value of technology.
 
-So we create this product to these happen: more contribute to this world , more GithubCoin GTC reward. Let everything go in the right direction.We may reward through they activity and star /fork data in they github project page later. Users can pay Githubcoin for searching tech help or get usefull data.
+So we create this product to these happen: more contribute to this world , more GitlibCoin GTC reward. Let everything go in the right direction.We may reward through they activity and star /fork data in they github project page later. Users can pay Githubcoin for searching tech help or get usefull data.
 
-Now everyone in Github can miner github coin . using latest ETH tech V1.10.2 (2021.4.19)
+Now everyone in Github can miner GitlibCoin . using latest ETH tech V1.10.2 (2021.4.19)
 
-Get 1000~10,000 GithubCoin after check your github account ownership：
+Get 1000~10,000 GitlibCoin after check your github account ownership：
 
-http://hayoou.com/gtc/get_githubcoin.php
+http://hayoou.com/gtc
 
 Offical page:
 
@@ -20,10 +20,10 @@ Open source：
 
 https://gitee.com/hayoou/githubcoin
  
-Now everyone in Github can miner github coin . 
+Now everyone in Github can miner Gitlib coin . 
 using latest ETH tech V1.10.2 (2021.4.19)
 
-PC miner Github币电脑挖矿软件 :
+PC miner Gitlib币电脑挖矿软件 :
 
 ![img](https://boxmy.hayoou.com/filecache/14bcc65fb35954439ae49eca241ff794)
 
@@ -35,7 +35,7 @@ miner list 矿机列表：
 
 http://gtb.hayoou.com/miner.php
 
-[Github coin contract deploy 公链 合约部署流程.pdf](http://hayoou.com/yaf8)
+[Gitlib coin contract deploy 公链 合约部署流程.pdf](http://hayoou.com/yaf8)
 
 
 We removed the difficulty bomb in etheum,can miner for ever!
@@ -46,12 +46,23 @@ Android wallet (open source) :
 
 https://github.com/hayooucom/githubcoin-android/releases/tag/1.1
 
-[GithubCoin-wallet-安卓钱包-1.1.apk](http://hayoou.com/yafc)
+[GitlibCoin-wallet-安卓钱包-1.1.apk](http://hayoou.com/yafc)
 
 <img src="https://boxmy.hayoou.com/filecache/f2a7be5539c3483caa1126d869e33f08" alt="drawing" width="240"/>
 
 Welcome to use !
-How to use move PC miner wallet to phone  :
+
+contact us : 
+
+Twitter:
+
+https://twitter.com/hayoou_offical
+
+Discord:
+
+https://discord.gg/qcxjgMmb2X
+
+How to move PC miner wallet to phone  :
 
 Copy PCminerDIR/data/11/keystore/xxxx file to phone SDcard/githubcoin/xxxx.json
 
