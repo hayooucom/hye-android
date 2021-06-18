@@ -1,6 +1,7 @@
 package rehanced.com.simpleetherwallet.activities;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -97,8 +98,10 @@ public class MainActivity extends SecureAppCompatActivity implements NetworkUpda
                 .addDrawerItems(
                         new PrimaryDrawerItem().withName(getResources().getString(R.string.drawer_import)).withIcon(R.drawable.ic_action_wallet3),
                         new PrimaryDrawerItem().withName(getResources().getString(R.string.action_settings)).withIcon(R.drawable.ic_setting),
+                        new PrimaryDrawerItem().withName(getResources().getString(R.string.getgithubcoin)).withIcon(R.drawable.ic_reddit),
                         new PrimaryDrawerItem().withName(getResources().getString(R.string.drawer_about)).withIcon(R.drawable.ic_about),
                         new PrimaryDrawerItem().withName(getResources().getString(R.string.reddit)).withIcon(R.drawable.ic_reddit)
+
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -431,13 +434,21 @@ public class MainActivity extends SecureAppCompatActivity implements NetworkUpda
                 startActivityForResult(settings, rehanced.com.simpleetherwallet.activities.SettingsActivity.REQUEST_CODE);
                 break;
             }
+
             case 3: {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("http://hayoou.com/gtc/get_githubcoin.php"));//设置一个URI地址
+                this.startActivity(intent);//用startActivity打开这个指定的网页。
+                break;
+            }
+            case 4: {
 
                 Intent intent = new Intent();
                 //或者是像下面这样的写,这里是用来了意图（intent）里面的标准action这里面还有许多的标准意图可以使用
-//   intent.setAction("android.intent.action.VIEW"); //这里面的意图可以自已写也可以像下面一句这样直接用Intent里面的常量
+                //   intent.setAction("android.intent.action.VIEW"); //这里面的意图可以自已写也可以像下面一句这样直接用Intent里面的常量
                 intent.setAction(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("http://v.hayoou.com/ethwallet/gtbshare/intro.php"));//设置一个URI地址
+                intent.setData(Uri.parse("http://hayoou.com/githubcoin"));//设置一个URI地址
                 this.startActivity(intent);//用startActivity打开这个指定的网页。
                 /*
                 new AlertDialog.Builder(this)
@@ -464,13 +475,13 @@ public class MainActivity extends SecureAppCompatActivity implements NetworkUpda
                         .show();*/
                 break;
             }
-            case 4: {
+            case 5: {
                 Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse("http://hayoou.com/githubcoin"));
+                i.setData(Uri.parse("https://github.com/hayooucom/githubcoin"));
                 startActivity(i);
                 break;
             }
-            case 5: {
+            case 6: {
                 if (WalletStorage.getInstance(this).getFullOnly().size() == 0) {
                     Dialogs.noFullWallet(this);
                 } else {

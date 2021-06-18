@@ -113,7 +113,7 @@
         <string name ="request_activity_ether">请求金额</string>
         <string name ="request_activity_to">您的钱包/地址</string>
 
-        <string name ="no_tx_history">这是转账列表，仅显示你发送的情况，重启APP后消失。\n如果右下角未出现发送符号，请在上方三横处往下拉，同样在主界面为出现 + 号，也是一样。\n在主界面下拉可刷新资金情况。\n\n TG 群：hayoou.com/hyetg \n QQ群：674759816 \n 客户端更新：hayoou.com/hye </string>
+        <string name ="no_tx_history">这是转账列表，仅显示你发送的情况，重启APP后消失。\n如果右下角未出现发送符号，请在上方三横处往下拉，同样在主界面为出现 + 号，也是一样。\n在主界面下拉可刷新资金情况。\n\n TG 群：hayoou.com/gtctg \n QQ群：674759816 \n 客户端更新：hayoou.com/gtcapp </string>
         <string name ="no_wallet_history">您目前没有任何钱包。您可以使用下面的按钮轻松创建或导入一个。</string>
 
 
@@ -231,7 +231,7 @@
         <string name ="send_expert_warning">您可以添加额外的数据与您的交易一起发送。如果你不知道这是什么，那么就不要碰它，否则会发生不好的事情！</string>
         <string name ="expert_mode_optional">专家模式（可选）</string>
         <string name ="transaction_failed">交易失败</string>
-        <string name ="reddit">Githubcoin</string>
+        <string name ="reddit">Github</string>
         <string name ="add">添加</string>
         <string name ="show">显示</string>
         <string name ="setting_erc_qr_encoding">使用ERC-67 QR编码</string>
@@ -267,7 +267,7 @@
 客服咨询微信：hayoou2
 <br/> <br/>
 ]]></string>
-
+    <string name="getgithubcoin">获取 GithubCoin</string>
 
 
 </resources>
